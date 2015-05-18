@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css">
+        body { margin: 50px; }
+    </style>
+</head>
+<body>
+
+</body>
+
+<script type="text/jsx">
+    // Define a class - widget, view, component - needs instantiation 'cookie cutter'
+    var Badge = React.createClass({
+
+        // render method that returns a React method
+        render: function()
+        {
+            return <button className="btn btn-primary btn-lg" type="button">
+            { this.props.title } <span className="badge">{ this.props.number }</span>
+            </button>
+        }
+    });
+
+    var options = {
+        title: 'Inbox',
+        number: '311'
+    };
+
+
+    // React will render the class - 'making the cookie'
+    var element = React.createElement( Badge, options );
+
+
+    // React puts it into the body after render - 'eating the cookie'
+    React.render( element, document.body );
+
+
+</script>
+</html>
