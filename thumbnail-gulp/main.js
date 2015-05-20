@@ -25,7 +25,7 @@ var element = React.createElement( ThumbnailList, options );
 
 React.render( element, document.querySelector( '.container' ) );
 
-},{"./thumbnail-list":"/Users/clint.milner/projects/cm-react/cm-react/thumbnail-gulp/src/thumbnail-list.jsx","react":"/Users/clint.milner/projects/cm-react/cm-react/thumbnail-gulp/node_modules/react/react.js"}],"/Users/clint.milner/projects/cm-react/cm-react/thumbnail-gulp/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{"./thumbnail-list":"/Users/clint.milner/projects/cm-react/cm-react/thumbnail-gulp/src/thumbnail-list-item.jsx","react":"/Users/clint.milner/projects/cm-react/cm-react/thumbnail-gulp/node_modules/react/react.js"}],"/Users/clint.milner/projects/cm-react/cm-react/thumbnail-gulp/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};

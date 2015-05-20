@@ -3,24 +3,42 @@
 
 var React = require( 'react' );
 var Button = require( './button' );
-var List = require( './list' );
+var ListItem = require( './list-item' );
 
 module.exports = React.createClass({
     handleClick: function(){
-        console.info( 'hi from dropdown' );
+        this.setState( { open: !this.state.open } ); // sets state and forces a re-render of component
+    },
+    handleItemClick: function(item){
+        this.setState({
+           open: false,
+           itemTitle: item
+        });
+    },
+    getInitialState: function()
+    {
+        return { open: false }
     },
    render: function()
    {
+       var list = this.props.items.map(function(item)
+       {
+          return <ListItem
+              item={item}
+              className={ this.state.itemTitle === item ? "active" : "" }
+              whenItemClicked={this.handleItemClick}
+          />
+       }.bind(this));
        return <div className="dropdown">
             <Button
                 whenClicked={this.handleClick}
-                className="btn-default"
-                title={this.props.title}
-                subTitleClassName="caret" />
+                className="btn-danger"
+                title={this.state.itemTitle || this.props.title}
+                subTitleClassName="caret"
+            />
+           <ul className={"dropdown-menu " + (this.state.open ? "show" : "" )}>
+               {list}
+           </ul>
        </div>
    }
 });
-
-
-
-// Lecture 19
