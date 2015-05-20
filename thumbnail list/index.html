@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css">
+        body { margin: 50px; }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+
+<script type="text/jsx">
+    var Badge = React.createClass({
+        render: function(){
+            return <button className="btn btn-xl btn-primary" type="button">
+            {this.props.title} <span className="badge">{this.props.number}</span>
+            </button>
+        }
+    });
+
+    var Thumbnail = React.createClass({
+        render: function(){
+            return <div className="col-sm-6 col-md-4">
+                <div className="thumbnail">
+                    <img src={this.props.imageUrl} alt="..." />
+                        <div className="caption">
+                            <h3>{this.props.header}</h3>
+                            <p>{this.props.description}</p>
+                            <p><a href="#" className="btn btn-primary" role="button">Button</a> <a href="#" className="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+        }
+    });
+
+    var options = {
+        title: 'Sent',
+        number: 311,
+        header: 'Learn React.js',
+        description: 'React is an excellent JavaScript library for scripting front end content. React is an excellent JavaScript library for scripting front end content.',
+        imageUrl: 'https://raw.githubusercontent.com/wiki/facebook/react/react-logo-1000-transparent.pnggit '
+    };
+
+    var element = React.createElement( Thumbnail, options );
+
+    React.render( element, document.querySelector( '.container' ) );
+
+
+
+
+
+</script>
+</html>
